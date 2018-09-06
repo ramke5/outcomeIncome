@@ -1,0 +1,16 @@
+ba\ramke\outcomeIncome\controller\HelloController.class
+ba\ramke\outcomeIncome\controller\PaymentMethodController.class
+ba\ramke\outcomeIncome\model\Expense.class
+ba\ramke\outcomeIncome\model\Category.class
+ba\ramke\outcomeIncome\controller\PaymentIncomeController.class
+ba\ramke\outcomeIncome\model\Item.class
+ba\ramke\outcomeIncome\repository\PaymentIncomeRepository.class
+ba\ramke\outcomeIncome\repository\PaymentMethodRepository.class
+ba\ramke\outcomeIncome\controller\CategoryController.class
+ba\ramke\outcomeIncome\repository\PlaceRepository.class
+ba\ramke\outcomeIncome\model\PaymentMethod.class
+ba\ramke\outcomeIncome\App.class
+ba\ramke\outcomeIncome\model\Place.class
+ba\ramke\outcomeIncome\controller\PlaceController.class
+ba\ramke\outcomeIncome\model\PaymentIncome.class
+ba\ramke\outcomeIncome\repository\CategoryRepository.class
