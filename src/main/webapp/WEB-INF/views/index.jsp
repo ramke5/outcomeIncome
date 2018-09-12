@@ -16,11 +16,23 @@
 
   <div class="form">
     <form action="hello" method="post">
-    	<h1><a href="place/add">Unesite prodajno mjesto!</a></h1>
-    	<h1><a href="category/add">Unesite kategoriju!</a></h1>
-    	<h1><a href="paymentMethod/add">Unesite metodu naplate!</a></h1>
-    	<h1><a href="paymentIncome/add">Unesite uplatu!</a></h1>
-    	<h1><a href="expense/add">Unesite racun!</a></h1>
+    	<table>
+	    	<tr>
+	    		<td><a href="place/add">Unesite prodajno mjesto!</a></td>
+	    	</tr>
+	    	<tr>
+	    		<td><a href="category/add">Unesite kategoriju!</a></td>
+	    	</tr>
+	    	<tr>
+	    		<td><a href="paymentMethod/add">Unesite metodu naplate!</a></td>
+	    	</tr>
+	    	<tr>
+	    		<td><a href="paymentIncome/add">Unesite uplatu!</a></td>
+	    	</tr>
+	    	<tr>
+		   		<td><a href="expense/add">Unesite racun!</a></td>    	
+	    	</tr>
+	   	</table>
     </form>
   </div>
 

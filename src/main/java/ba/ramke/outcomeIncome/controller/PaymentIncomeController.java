@@ -29,10 +29,10 @@ import ba.ramke.outcomeIncome.repository.PaymentMethodRepository;
 @RequestMapping(value = "/paymentIncome")
 public class PaymentIncomeController {
 	
-	@DateTimeFormat(pattern = "dd-MM-yyyy") 
+	@DateTimeFormat(pattern = "MM/dd/yyyy") 
 	@InitBinder
 	public void initBinder(WebDataBinder webDataBinder) {
-	 SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+	 SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
 	 dateFormat.setLenient(false);
 	 webDataBinder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, true));
 	 }

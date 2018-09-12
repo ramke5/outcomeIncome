@@ -4,11 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-
-<!-- Static content -->
-<link rel="stylesheet" href="/resources/css/style.css">
-<script type="text/javascript" src="/resources/js/app.js"></script>
-
+<link href="/css/bootstrap.css" rel="stylesheet">
 <title>Spring Boot</title>
 </head>
 <body>
@@ -16,14 +12,19 @@
   
 <form:form method="POST" action="/place/add"
   modelAttribute="place">
-    
-    <form:label path="id">Id</form:label>
-    <form:input path="id" />
-    <form:label path="placeName">Name</form:label>
-    <form:input path="placeName" />
-     
-    <input type="submit" value="Submit" />
-</form:form>
-  
+    <table>
+	    <tr>
+		    <td><form:label path="id">Id</form:label></td>
+		    <td><form:input path="id" /></td>
+	    </tr>
+	    <tr>
+		    <td><form:label path="placeName">Ime mjesta</form:label></td>
+		    <td><form:input path="placeName" /></td>
+		</tr> 
+		<tr>
+		    <td><input type="submit" value="Submit" /></td>
+	    </tr>
+    </table>     
+</form:form>  
 </body>
 </html>

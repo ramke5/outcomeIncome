@@ -24,7 +24,7 @@ public class PaymentIncome implements Serializable{
 	private Long id;
 	private Double amount;
 	private String note;
-    @DateTimeFormat(pattern = "dd/MM/yyyy")
+    @DateTimeFormat(pattern = "MM/dd/yyyy")
 	private Date date;
 	private Date dateCreated;
 	private Date dateUpdated;
