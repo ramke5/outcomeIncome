@@ -6,6 +6,8 @@ import java.util.Set;
 
 import javax.persistence.*;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 @Entity
 @Table(name = "expenses")
 public class Expense implements Serializable{
@@ -17,6 +19,7 @@ public class Expense implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+    @DateTimeFormat(pattern = "MM/dd/yyyy")
 	private Date date;
 	private Double totalPrice;
 	private Date dateCreated;
