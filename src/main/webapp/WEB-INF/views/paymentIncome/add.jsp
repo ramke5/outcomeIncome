@@ -1,3 +1,5 @@
+<%@page import="java.util.Date"%>
+<%@page import="java.text.SimpleDateFormat"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
@@ -24,8 +26,7 @@
     <form:input path="amount" />
     <form:label path="note">Naznaka uplate</form:label>
     <form:input path="note" />
-	
-
+	<form:input type="text" id="date" name="date" path="date" data-format="dd-MM-yyyy" />
     <form:select path="paymentMethod.id">
     	<form:options itemValue="id" itemLabel="paymentType" items="${paymentMethods}"/>
     </form:select>

@@ -1,5 +1,6 @@
 package ba.ramke.outcomeIncome.controller;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -7,8 +8,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.propertyeditors.CustomDateEditor;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -24,10 +29,19 @@ import ba.ramke.outcomeIncome.repository.PaymentMethodRepository;
 @RequestMapping(value = "/paymentIncome")
 public class PaymentIncomeController {
 	
+	@DateTimeFormat(pattern = "dd-MM-yyyy") 
+	@InitBinder
+	public void initBinder(WebDataBinder webDataBinder) {
+	 SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+	 dateFormat.setLenient(false);
+	 webDataBinder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, true));
+	 }
+	
 	@Autowired
 	private PaymentIncomeRepository paymentIncomeRepository;
 	@Autowired
 	private PaymentMethodRepository paymentMethodRepository;
+	
 	@RequestMapping(value = "/add", method = RequestMethod.GET)
 	public ModelAndView add(final HttpServletRequest request) {
        ModelAndView mav = new ModelAndView("paymentIncome/add");
@@ -49,11 +63,11 @@ public class PaymentIncomeController {
    		final RedirectAttributes redirectAttributes,
    		final HttpServletRequest request)  {
        ModelAndView mav = new ModelAndView("paymentIncome/add");
-       
        try {
 	        mav = new ModelAndView("redirect:/");
 	        paymentIncome.setDateCreated(new Date());
 	        paymentIncome.setDateUpdated(new Date());
+	        paymentIncome.setDate(paymentIncome.getDate());
 	        paymentIncomeRepository.save(paymentIncome);
 	        
 	} catch (Exception e) {
