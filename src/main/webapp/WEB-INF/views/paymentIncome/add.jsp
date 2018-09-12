@@ -24,15 +24,12 @@
     <form:input path="amount" />
     <form:label path="note">Naznaka uplate</form:label>
     <form:input path="note" />
-    <form:label path="date">Datum uplate</form:label>
-    <form:input path="date" type="date"/>
-<%--     <form:label path="paymentMethod.id">Metoda uplate</form:label> --%>
-<%--     <form:input path="paymentMethod.id" /> --%>
-    <form:select path="paymentMethod">
-    	<form:options itemValue="paymentMethod.id" itemLabel="paymentMethod.paymentType" items="${paymentMethods}"/>
+	
+
+    <form:select path="paymentMethod.id">
+    	<form:options itemValue="id" itemLabel="paymentType" items="${paymentMethods}"/>
     </form:select>
     <input type="submit" value="Submit" />
 </form:form>
   
 </body>
-</html>

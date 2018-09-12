@@ -14,7 +14,7 @@ public class PaymentMethod implements Serializable{
 	private static final long serialVersionUID = -7008785891706991665L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
+	private Long id;
 	private String paymentType;
 	private Date dateCreated;
 	private Date dateUpdated;
@@ -29,7 +29,7 @@ public class PaymentMethod implements Serializable{
 		// TODO Auto-generated constructor stub
 	}
 	
-	public PaymentMethod(Integer id, String paymentType, Date dateCreated, Date dateUpdated, Expense expense, PaymentIncome paymentIncome) {
+	public PaymentMethod(Long id, String paymentType, Date dateCreated, Date dateUpdated, Expense expense, PaymentIncome paymentIncome) {
 		this.id = id;
 		this.paymentType = paymentType;
 		this.dateCreated = dateCreated;
@@ -38,11 +38,11 @@ public class PaymentMethod implements Serializable{
 		this.paymentIncome = paymentIncome;
 	}
 
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
