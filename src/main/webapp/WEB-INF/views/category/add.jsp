@@ -6,9 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 
 <!-- Static content -->
-<link rel="stylesheet" href="/resources/css/style.css">
-<script type="text/javascript" src="/resources/js/app.js"></script>
-
+<link href="/css/bootstrap.css" rel="stylesheet">
 <title>Spring Boot</title>
 </head>
 <body>
@@ -16,14 +14,19 @@
   
 <form:form method="POST" action="/category/add"
   modelAttribute="category">
-    
-    <form:label path="id">Id</form:label>
-    <form:input path="id" />
-    <form:label path="name">Naziv kategorije</form:label>
-    <form:input path="name" />
-     
-    <input type="submit" value="Submit" />
+    <table>
+	    <tr>
+		    <td><form:label path="id">Id</form:label></td>
+		    <td><form:input path="id" /></td>
+	    </tr>
+	    <tr>
+		    <td><form:label path="name">Naziv kategorije</form:label></td>
+		    <td><form:input path="name" /></td>
+		</tr> 
+		<tr>
+			<td><input type="submit" value="Submit" /></td>
+		</tr>
+	</table>     
 </form:form>
-  
 </body>
 </html>

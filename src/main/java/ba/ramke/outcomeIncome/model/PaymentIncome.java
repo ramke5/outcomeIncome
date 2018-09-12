@@ -3,7 +3,11 @@ package ba.ramke.outcomeIncome.model;
 import java.io.Serializable;
 import java.util.Date;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -20,6 +24,7 @@ public class PaymentIncome implements Serializable{
 	private Long id;
 	private Double amount;
 	private String note;
+    @DateTimeFormat(pattern = "MM/dd/yyyy")
 	private Date date;
 	private Date dateCreated;
 	private Date dateUpdated;
