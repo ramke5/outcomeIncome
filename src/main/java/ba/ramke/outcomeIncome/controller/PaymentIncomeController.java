@@ -1,6 +1,7 @@
 package ba.ramke.outcomeIncome.controller;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
@@ -15,21 +16,28 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import ba.ramke.outcomeIncome.model.PaymentIncome;
+import ba.ramke.outcomeIncome.model.PaymentMethod;
 import ba.ramke.outcomeIncome.repository.PaymentIncomeRepository;
+import ba.ramke.outcomeIncome.repository.PaymentMethodRepository;
 
 @Controller
 @RequestMapping(value = "/paymentIncome")
 public class PaymentIncomeController {
+	
 	@Autowired
 	private PaymentIncomeRepository paymentIncomeRepository;
+	@Autowired
+	private PaymentMethodRepository paymentMethodRepository;
 	@RequestMapping(value = "/add", method = RequestMethod.GET)
 	public ModelAndView add(final HttpServletRequest request) {
        ModelAndView mav = new ModelAndView("paymentIncome/add");
        try {
-    	   PaymentIncome paymentIncome = new PaymentIncome();
-	        mav.addObject("paymentIncome", paymentIncome);        	
+    	   List<PaymentMethod> paymentMethods = paymentMethodRepository.findAll();
+    	   PaymentIncome paymentIncome = new PaymentIncome();    	   
+	       mav.addObject("paymentIncome", paymentIncome);
+	       mav.addObject("paymentMethods", paymentMethods);
        } catch (Exception e){
-
+			System.out.println(e.getMessage());
        }
        return mav;
    }

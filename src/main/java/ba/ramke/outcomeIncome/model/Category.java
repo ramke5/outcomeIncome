@@ -15,7 +15,7 @@ public class Category implements Serializable{
 	private static final long serialVersionUID = -1901006529754780206L;
 	@Id
 	@GeneratedValue
-	private Integer id;
+	private Long id;
 	private String name;
 	private Date dateCreated;
 	private Date dateUpdated;
@@ -27,7 +27,7 @@ public class Category implements Serializable{
 		super();
 	}
 
-	public Category(Integer id, String name, Date dateCreated, Date dateUpdated, Item item) {
+	public Category(Long id, String name, Date dateCreated, Date dateUpdated, Item item) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -36,11 +36,11 @@ public class Category implements Serializable{
 		this.item = item;
 	}
 
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

@@ -27,7 +27,7 @@ public class PaymentMethodController {
        ModelAndView mav = new ModelAndView("paymentMethod/add");
        try {
     	   PaymentMethod paymentMethod = new PaymentMethod();
-	        mav.addObject("paymentMethods", paymentMethod);        	
+	        mav.addObject("paymentMethod", paymentMethod);        	
        } catch (Exception e){
 
        }
