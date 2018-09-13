@@ -2,9 +2,18 @@ package ba.ramke.outcomeIncome.model;
 
 import java.io.Serializable;
 import java.util.Date;
-import java.util.Set;
+import java.util.List;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Table(name = "expenses")
@@ -16,7 +25,9 @@ public class Expense implements Serializable{
 	private static final long serialVersionUID = 5853767798486037693L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id", updatable = false, nullable = false)
 	private Long id;
+    @DateTimeFormat(pattern = "MM/dd/yyyy")
 	private Date date;
 	private Double totalPrice;
 	private Date dateCreated;
@@ -26,13 +37,13 @@ public class Expense implements Serializable{
 	@OneToOne
     private Place place;
 	@OneToMany
-	private Set<Item> items;
+	private List<Item> items;
 	
 	public Expense() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Expense(Long id, Date date, Double totalPrice, Date dateCreated, Date dateUpdated, PaymentMethod paymentMethod, Place place, Set<Item> items) {
+	public Expense(Long id, Date date, Double totalPrice, Date dateCreated, Date dateUpdated, PaymentMethod paymentMethod, Place place, List<Item> items) {
 		super();
 		this.id = id;
 		this.date = date;
@@ -100,11 +111,11 @@ public class Expense implements Serializable{
 		this.place = place;
 	}
 
-	public Set<Item> getItems() {
+	public List<Item> getItems() {
 		return items;
 	}
 
-	public void setItems(Set<Item> items) {
+	public void setItems(List<Item> items) {
 		this.items = items;
 	}
 

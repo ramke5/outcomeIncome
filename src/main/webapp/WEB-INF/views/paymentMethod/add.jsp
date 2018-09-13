@@ -15,10 +15,10 @@
 <form:form method="POST" action="/paymentMethod/add"
   modelAttribute="paymentMethod">
     <table>
-	    <tr>
-		    <td><form:label path="id">Id</form:label></td>
-		    <td><form:input path="id" /></td>
-	    </tr>
+<!-- 	    <tr> -->
+<%-- 		    <td><form:label path="id">Id</form:label></td> --%>
+<%-- 		    <td><form:input path="id" /></td> --%>
+<!-- 	    </tr> -->
 	    <tr>
 		    <td><form:label path="paymentType">Nacin placanja</form:label></td>
 		    <td><form:input path="paymentType" /></td>
