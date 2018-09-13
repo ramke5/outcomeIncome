@@ -15,10 +15,10 @@
 <form:form method="POST" action="/category/add"
   modelAttribute="category">
     <table>
-	    <tr>
-		    <td><form:label path="id">Id</form:label></td>
-		    <td><form:input path="id" /></td>
-	    </tr>
+<!-- 	    <tr> -->
+<%-- 		    <td><form:label path="id">Id</form:label></td> --%>
+<%-- 		    <td><form:input path="id" /></td> --%>
+<!-- 	    </tr> -->
 	    <tr>
 		    <td><form:label path="name">Naziv kategorije</form:label></td>
 		    <td><form:input path="name" /></td>
